@@ -5,9 +5,10 @@
              BackgroundColor="LightSteelBlue">
     
     <StackLayout>
-        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto">
+        <Grid RowSpacing="20" RowDefinitions="Auto,Auto,Auto,Auto">
             <StackLayout Grid.Row="4">
-                <Label Text="Sign In"
+                <Image Source="appLogo.png" WidthRequest="230" HeightRequest="230"></Image>
+                <Label Text="登入"
                        FontSize="25"
                        TextColor="White"
                        HorizontalTextAlignment="Center"
@@ -30,7 +31,6 @@
                             FontSize="18"
                             Placeholder="UserName"
                             PlaceholderColor="White"
-                            IsPassword="True"
                             x:Name="EntryUserName"/>
                     </Frame>
                 </Frame>
@@ -56,7 +56,7 @@
                             x:Name="EntryPassword"/>
                     </Frame>
                 </Frame>
-                <RelativeLayout Padding="25">
+                <RelativeLayout Padding="20">
                     <CheckBox
                         Color="White"
                         IsChecked="False"
@@ -64,7 +64,7 @@
                         x:Name="CheckBox"
                         Margin="15,0,0,0"/>
                     <Label
-                        Text=" Show Password"
+                        Text=" 顯示密碼"
                         TextColor="White"
                         FontSize="18"
                         RelativeLayout.XConstraint="50"
@@ -75,9 +75,10 @@
                         TextColor="White"
                         FontSize="18"
                         BackgroundColor="Transparent"
-                        RelativeLayout.XConstraint="50"
-                        RelativeLayout.YConstraint="30"
-                        />
+                        RelativeLayout.XConstraint="280"
+                        RelativeLayout.YConstraint="-8"
+                        
+                        TextTransform="None"/>
                 </RelativeLayout>
                 <Button
                     x:Name="LogInButton"
@@ -87,23 +88,22 @@
                     BorderColor="Navy"
                     Margin="10,-35,10,0"
                     FontSize="18"
-                    
+                    Clicked="LogInButton_Clicked"
                     HeightRequest="60"
                     CornerRadius="50"
                     BackgroundColor="MidnightBlue"/>
-                <Button
-                    x:Name="SignUpButton"
-                    Text="註冊"
-                    TextColor="Navy"
-                    BorderWidth="2"
-                    BorderColor="DarkSlateBlue"
-                    Margin="10,0,10,0"
-                    FontSize="18"
-                    
-                    HeightRequest="60"
-                    CornerRadius="60"
-                    BackgroundColor="White"/>
-                
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="註冊" TextColor="Gray"
+                              FontAttributes="Bold"
+                              TextDecorations="Underline"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>   
             </StackLayout>
         </Grid>
     </StackLayout>
